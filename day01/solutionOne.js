@@ -6,7 +6,7 @@ fs.readFile("./input.txt", "utf8", function(err, data) {
 		return console.log(err);
 	}
 
-	console.log(`The answer is: ${sumAdjacentNumerals(data)}`);
+	console.log(`Answer: ${sumAdjacentNumerals(data)}`);
 });
 
 function sumAdjacentNumerals(captcha) {

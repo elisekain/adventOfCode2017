@@ -6,7 +6,7 @@ fs.readFile("./input.txt", "utf8", function(err, data) {
 		return console.log(err);
 	}
 
-	console.log(`The answer is: ${sumOppositeNumerals(data)}`);
+	console.log(`Answer: ${sumOppositeNumerals(data)}`);
 });
 
 function sumOppositeNumerals(captcha) {
@@ -14,13 +14,8 @@ function sumOppositeNumerals(captcha) {
 	let halfwayPoint = captcha.length / 2;
 
 	for (i = 0; i < captcha.length; i++) {
-		let point = halfwayPoint + i;
-
-		// Cycle around to beginning if needed
-		if (point > captcha.length) point -= captcha.length;
-
-		// If the nums match, add it to savedNums
-		if (captcha[i] == captcha[point]) savedNums.push(captcha[i]);
+		// If the nums match, num * 2 and add it to savedNums
+		if (captcha[i] == captcha[halfwayPoint + i]) savedNums.push(captcha[i] * 2);
 	}
 
 	// Add all the savedNums together
