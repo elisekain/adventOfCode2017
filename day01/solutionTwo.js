@@ -1,4 +1,4 @@
-// read the input file and process it
+// Read the input file and process it
 fs = require("fs");
 
 fs.readFile("./input.txt", "utf8", function(err, data) {
